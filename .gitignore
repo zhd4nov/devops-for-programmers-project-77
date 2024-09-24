@@ -1,0 +1,6 @@
+
+.vault_pass
+.terraform
+terraform.tfstate
+secret.*
+*.backup
