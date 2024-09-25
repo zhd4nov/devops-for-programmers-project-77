@@ -31,3 +31,12 @@ variable "db_password" {
 variable "yc_postgresql_version" {
     type = number
 }
+
+variable "ssh_public_key" {
+    type = string
+    sensitive = true
+}
+
+variable "path_to_key" {
+    type = string
+}
