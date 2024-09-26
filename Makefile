@@ -12,3 +12,9 @@ apply:
 
 destroy:
 	terraform -chdir=terraform destroy
+
+install:
+	ansible-galaxy install -r ansible/requirements.yml
+
+deploy:
+	ansible-playbook -i ansible/inventory.ini -v --vault-password-file ansible/.vault_pass ansible/playbook.yml
