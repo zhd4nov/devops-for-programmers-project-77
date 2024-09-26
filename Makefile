@@ -17,4 +17,4 @@ install:
 	ansible-galaxy install -r ansible/requirements.yml
 
 deploy:
-	ansible-playbook -i ansible/inventory.ini -v --vault-password-file ansible/.vault_pass ansible/playbook.yml
+	ansible-playbook -i ansible/inventory.ini -v --vault-password-file ansible/.vault_pass ansible/playbook.yml -u ubuntu --private-key=~/.ssh/id_hexlet_rsa
