@@ -1,5 +1,5 @@
 init:
-	terraform -chdir=terraform init -backend-config=secrets.backend.tfvars
+	terraform -chdir=terraform init -backend-config=secret.backend.tfvars
 
 validate:
 	terraform -chdir=terraform validate
