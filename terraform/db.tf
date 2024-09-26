@@ -1,7 +1,7 @@
 resource "yandex_mdb_postgresql_cluster" "cluster" {
   name        = "db-cluster"
   environment = "PRESTABLE"
-  network_id  = yandex_vpc_network.network.id
+  network_id  = yandex_vpc_network.net.id
 
   config {
     version = 15
