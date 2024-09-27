@@ -50,27 +50,27 @@ resource "yandex_alb_load_balancer" "balancer" {
     }
   }
 
-#   listener {
-#     name = "listener-https"
-#     endpoint {
-#       ports = [443]
-#       address {
-#         external_ipv4_address {
-#           address = yandex_vpc_address.lb-addr.external_ipv4_address[0].address
-#         }
-#       }
-#     }
+  listener {
+    name = "listener-https"
+    endpoint {
+      ports = [443]
+      address {
+        external_ipv4_address {
+          address = yandex_vpc_address.lb-addr.external_ipv4_address[0].address
+        }
+      }
+    }
 
-#     tls {
-#       default_handler {
-#         certificate_ids = ["${yandex_cm_certificate.cert.id}"]
+    tls {
+      default_handler {
+        certificate_ids = ["${yandex_cm_certificate.cert.id}"]
 
-#         http_handler {
-#           http_router_id = yandex_alb_http_router.lb-router.id
-#         }
-#       }
-#     }
-#   }
+        http_handler {
+          http_router_id = yandex_alb_http_router.lb-router.id
+        }
+      }
+    }
+  }
 }
 
 resource "yandex_alb_virtual_host" "virtual-host" {
