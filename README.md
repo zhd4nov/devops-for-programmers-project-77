@@ -3,3 +3,18 @@
 
 https://sometestapps.ru
 
+## Requirements
+
+- ansible
+- terraform
+- make
+
+## Commands
+
+- `make init` - terraform initialization
+- `make validate` - validate terraform configuration
+- `make plan` - create terraform execution plan
+- `make apply` - create resources
+- `make destroy` - destroy resources
+- `make install` - install ansible requirements
+- `make deploy` - execute ansible playbook
