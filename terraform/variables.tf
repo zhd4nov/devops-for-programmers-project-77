@@ -50,3 +50,23 @@ variable "datadog_app_key" {
   type      = string
   sensitive = true
 }
+
+variable "datadog_api_url" {
+  type      = string
+  sensitive = true
+}
+
+variable "instance_name" {
+  type      = string
+  sensitive = true
+}
+
+variable "my_site_https" {
+  type      = string
+  sensitive = true
+}
+
+variable "my_site" {
+  type      = string
+  sensitive = true
+}

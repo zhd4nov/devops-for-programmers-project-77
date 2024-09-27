@@ -1,6 +1,31 @@
-resource "datadog_monitor" "health-check" {
-  name    = "health check"
-  type    = "service check"
-  query   = "\"http.can_connect\".over(\"instance:datadog_health_check\").by(\"host\",\"instance\",\"url\").last(2).count_by_status()"
-  message = "{{host.name}} is not available"
+resource "datadog_monitor" "network_monitor" {
+  name               = "network_monitor"
+  type               = "service check"
+  message            = "Problems with network"
+  escalation_message = "Alarm"
+
+  query = "'http.can_connect'.over('instance:${var.instance_name}','url:${var.my_site}').by('*').last(2).count_by_status()"
+
+  monitor_thresholds {
+    warning           = 1
+    warning_recovery  = 1
+    critical          = 1
+    critical_recovery = 1
+  }
+}
+
+resource "datadog_monitor" "ssl_network_monitor" {
+  name               = "ssl_network_monitor"
+  type               = "service check"
+  message            = "Problems with ssl network"
+  escalation_message = "Alarm"
+
+  query = "'http.ssl_cert'.over('instance:${var.instance_name}_https','url:${var.my_site_https}').by('*').last(2).count_by_status()"
+
+  monitor_thresholds {
+    warning           = 1
+    warning_recovery  = 1
+    critical          = 1
+    critical_recovery = 1
+  }
 }
