@@ -1,5 +1,5 @@
 init:
-	terraform -C terraform init
+	make -C terraform init
 
 validate:
 	make -C terraform validate
