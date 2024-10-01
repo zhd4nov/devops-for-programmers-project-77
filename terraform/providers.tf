@@ -19,7 +19,7 @@ provider "yandex" {
   service_account_key_file = file(var.path_to_key)
   cloud_id                 = var.yc_cloud_id
   folder_id                = var.yc_folder_id
-  zone                     = "ru-central1-a"
+  zone                     = var.subnet_zone
 }
 
 provider "local" {}

@@ -70,3 +70,8 @@ variable "site_http_url" {
   type      = string
   sensitive = true
 }
+
+variable "subnet_zone" {
+  type      = string
+  sensitive = true
+}

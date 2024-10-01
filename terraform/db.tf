@@ -22,7 +22,7 @@ resource "yandex_mdb_postgresql_cluster" "cluster" {
   }
 
   host {
-    zone      = "ru-central1-a"
+    zone      = var.subnet_zone
     subnet_id = yandex_vpc_subnet.subnet.id
   }
 }

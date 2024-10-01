@@ -1,6 +1,6 @@
 resource "yandex_compute_instance" "vm1" {
   name = "hexlet1"
-  zone = "ru-central1-a"
+  zone = var.subnet_zone
 
   resources {
     cores  = 2
@@ -27,7 +27,7 @@ resource "yandex_compute_instance" "vm1" {
 
 resource "yandex_compute_instance" "vm2" {
   name = "hexlet2"
-  zone = "ru-central1-a"
+  zone = var.subnet_zone
 
   resources {
     cores  = 2
