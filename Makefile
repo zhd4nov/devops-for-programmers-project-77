@@ -1,20 +1,21 @@
 init:
-	terraform -chdir=terraform init -backend-config=secret.backend.tfvars
+	terraform -C terraform init
 
 validate:
-	terraform -chdir=terraform validate
+	make -C terraform validate
 
 plan:
-	terraform -chdir=terraform plan
+	make -C terraform plan
 
 apply:
-	terraform -chdir=terraform apply
+	make -C terraform apply
 
 destroy:
-	terraform -chdir=terraform destroy
+	make -C terraform destroy
 
 install:
-	ansible-galaxy install -r ansible/requirements.yml
+	make -C ansible install
 
 deploy:
-	ansible-playbook -i ansible/inventory.ini -v --vault-password-file ansible/.vault_pass ansible/playbook.yml
+	make -C ansible deploy
+	
