@@ -4,7 +4,7 @@ resource "datadog_monitor" "network_monitor" {
   message            = "Problems with network"
   escalation_message = "Alarm"
 
-  query = "'http.can_connect'.over('instance:${var.instance_name}','url:${var.my_site}').by('*').last(2).count_by_status()"
+  query = "'http.can_connect'.over('instance:${var.instance_name}','url:${var.site_http_url}').by('*').last(2).count_by_status()"
 
   monitor_thresholds {
     warning           = 1
@@ -20,7 +20,7 @@ resource "datadog_monitor" "ssl_network_monitor" {
   message            = "Problems with ssl network"
   escalation_message = "Alarm"
 
-  query = "'http.ssl_cert'.over('instance:${var.instance_name}_https','url:${var.my_site_https}').by('*').last(2).count_by_status()"
+  query = "'http.ssl_cert'.over('instance:${var.instance_name}_https','url:${var.site_https_url}').by('*').last(2).count_by_status()"
 
   monitor_thresholds {
     warning           = 1

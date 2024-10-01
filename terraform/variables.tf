@@ -61,12 +61,12 @@ variable "instance_name" {
   sensitive = true
 }
 
-variable "my_site_https" {
+variable "site_https_url" {
   type      = string
   sensitive = true
 }
 
-variable "my_site" {
+variable "site_http_url" {
   type      = string
   sensitive = true
 }
