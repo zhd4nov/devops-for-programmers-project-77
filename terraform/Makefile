@@ -1,5 +1,5 @@
 init:
-	terraform init -backend-config=secret.backend.tfvars
+	terraform init -backend-config=secret.backend.tfvars -reconfigure
 
 validate:
 	terraform  validate
