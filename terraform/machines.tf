@@ -22,7 +22,7 @@ resource "yandex_compute_instance" "vm1" {
     ssh-keys = "ubuntu:${var.ssh_public_key}"
   }
 
-   depends_on = [yandex_mdb_postgresql_cluster.cluster]
+  depends_on = [yandex_mdb_postgresql_cluster.cluster]
 }
 
 resource "yandex_compute_instance" "vm2" {
@@ -49,5 +49,5 @@ resource "yandex_compute_instance" "vm2" {
     ssh-keys = "ubuntu:${var.ssh_public_key}"
   }
 
-   depends_on = [yandex_mdb_postgresql_cluster.cluster]
+  depends_on = [yandex_mdb_postgresql_cluster.cluster]
 }
