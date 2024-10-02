@@ -6,3 +6,4 @@ secret.*
 *.backup
 .env
 inventory.ini
+terraform.lock.hcl
